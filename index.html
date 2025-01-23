@@ -39,54 +39,42 @@
   </header>
 
   <!-- SECTION -->
-  <main class="container-fluid p-4 bg-dark">
+  <main class="container-fluid p-4 bg-dark text-light">
 
-      <!-- Left Menu -->
+    <!-- Left Menu -->
     <div class="row justify-content-around">
-    <section class="col-4 bg-primary p-4 rounded">
-      <p class="text-end">3 Jots</p>
-      <h4> Add a Jot </h4>
-      <!-- Form Start -->
-      <form action="">
-        <input required type="color" style="border-radius: 50%; padding: 0;">
-        <label for="jot-title">
-          <input required class="p-2" type="text" id="jot-title" name="title" placeholder="Enter Note Title Here">
-        </label>
-        <button class="rounded btn btn-warning">Create <i class="mdi mdi-plus"></i></button>
-      </form>
-      <!-- Jot List -->
-      <div class="p-4">
-          <!-- Jot Id Here -->
-        <div class="p-2" id="jots">
-          <div style="border: 10px solid red">
-            <div class="p-2 d-flex justify-content-between">
-              <h4>Title</h4> <p class="text-end">Date Created</p>
-            </div>
+      <section class="col-md-4 bg-primary p-4 rounded">
+        <p class="text-end">3 Jots</p>
+        <h4>Add a Jot</h4>
+        <!-- Form Start -->
+        <form>
+          <input type="color" style="border-radius: 50%; padding: 0;">
+          <label for="jot-title">
+            <input required class="p-2 rounded" type="text" id="jot-title" name="title" placeholder="Enter Title Here">
+          </label>
+          <button class="rounded btn btn-warning">Create <i class="mdi mdi-plus"></i></button>
+        </form>
+
+        <div class="p-4">
+          <!-- Jot List Id Here -->
+          <div class="p-2" id="jots">
+            <!-- get JotListTemplate -->
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Active Jot -->
-<section class="col-7 p-4 bg-primary rounded" id="active-jot">
-  <div class="bg-secondary p-4 rounded">
-    <h3 style="color: red">Title</h3>
-    <p>Created on: 05/04/23</p>
-    <div class="d-flex justify-content-between">
-      <p>Last Updated: Wednesday 6/8/23 10:34am</p>
-      <div>
-        <button class="rounded btn btn-danger"><i class="mdi mdi-delete"></i> Delete</button>
-        <button class="rounded btn btn-success"><i class="mdi mdi-download"></i> Save</button>
-      </div>
+      <!-- Active Jot Id Here -->
+      <section class="col-md-7 p-4 bg-primary rounded" id="active-jot">
+        <!-- Filler for when there is no Active Jot -->
+        <div>
+          <div>
+            <img class="img-fluid typewriter" src="assets/img/florian-klauer-mk7D-4UCfmg-unsplash.jpg" alt="">
+            <h3 class="fw-bold p-4">Create or select a Jot to start Jotting!</h3>
+          </div>
+        </div>
+        <!-- getActiveJotTemplate -->
+      </section>
     </div>
-    <div class="jot-div">
-      <textarea class="jot-body" placeholder="Body"></textarea>
-    </div>
-  </div>
-</section>
-
-      </div>
-  </div>
   </main>
 
   <!-- SECTION -->

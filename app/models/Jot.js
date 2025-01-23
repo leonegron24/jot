@@ -18,17 +18,40 @@ export class Jot {
         this.title = data.title
         this.color = data.color
         this.body = data.body
-        this.createdAt = null
-        this.updatedAt = null
+        this.createdAt = data.createdAt
+        this.updatedAt = data.updatedAt
     }
 
-    getJotTemplate(){
+    get JotListTemplate(){
         return /*html*/ `
-        <div>
-            <div class =
-                ${this.title} ${this.body}
+        <div class='p-2'>
+            <div type='button' onclick="app.JotController.setActiveJot('${this.title}')" style="border: 10px solid ${this.color}">
+                <div class="p-2 d-flex justify-content-between">
+                    <p>${this.title}</p> <p class="text-end">${this.createdAt}</p>
+                </div>
             </div>
-        </div> 
+        </div>    
+        `
+    }
+
+    get ActiveJotTemplate() {
+        return /*html*/ `
+        <div class="bg-secondary p-4 rounded">
+            <h3>${this.title}</h3>
+            <p>${this.createdAt}</p>
+            <div class="d-flex justify-content-between">
+                <p>${this.updatedAt}</p>
+                <div>
+                    <button class="rounded btn btn-danger" onclick="app.JotController.deleteJot('${this.title}')"><i class="mdi mdi-delete"></i> Delete</button>
+
+                    <button class="rounded btn btn-success" onclick="app.JotController.saveJot('${this.title}')"><i class="mdi mdi-download"></i> Save</button>
+
+                </div>
+            </div>
+            <div class="row mt-4">
+                <textarea placeholder="Write Notes Here!">${this.body}</textarea>
+            </div>
+      </div>
         `
     }
 
