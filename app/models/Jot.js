@@ -38,9 +38,9 @@ export class Jot {
         return /*html*/ `
         <div class="bg-secondary p-4 rounded">
             <h3>${this.title}</h3>
-            <p>${this.createdAt}</p>
+            <p>Created on: ${this.createdAt}</p>
             <div class="d-flex justify-content-between">
-                <p>${this.updatedAt}</p>
+                <p>Last update: ${this.updatedAt}</p>
                 <div>
                     <button class="rounded btn btn-danger" onclick="app.JotController.deleteJot('${this.title}')"><i class="mdi mdi-delete"></i> Delete</button>
 
