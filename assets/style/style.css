@@ -5,3 +5,9 @@ textarea {
  main {
     font-family: 'Courier New', Courier, monospace;
  }
+
+ .jotForm{
+    display: flex;
+    flex-direction: column;
+ }
+  

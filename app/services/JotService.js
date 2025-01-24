@@ -1,7 +1,9 @@
 import { AppState } from "../AppState.js"
+import { Jot } from "../models/jot.js"
+import { loadState, saveState } from "../utils/Store.js"
 
 class JotService {
-
+    
     setActiveJot(jotTitle) {
         console.log('service activating jot')
         const jots = AppState.jots
@@ -10,7 +12,37 @@ class JotService {
         AppState.activeJot = activateJot
         console.log('jot activated')
     }
-
+    
+    
+    saveActiveJot(newBody){
+        const activeJot = AppState.activeJot
+        activeJot.body = newBody
+        activeJot.updatedAt = new Date()
+        console.log(activeJot.updatedAt)
+        this.saveJot()
+        AppState.emit('activeJot')
+        
+    }
+    
+    saveJot(){
+        const jots = AppState.jots
+        saveState('jots', jots)
+    }
+    
+    
+    loadJot(){
+        const jots = loadState('jots', [Jot])
+        console.log('loading jots', jots)
+        AppState.jots = jots
+    }
+    
+    deleteJot() {
+        const activeJot = AppState.activeJot
+        const indexToRemove = AppState.jots.indexOf(activeJot)
+        AppState.activeJot = null
+        AppState.jots.splice(indexToRemove,1)
+        this.saveJot
+    }
 }
 
 export const jotService = new JotService()
