@@ -20,6 +20,8 @@ export class JotController {
         if (!elmJotList){return}
         jots.forEach(jot => jotList += jot.JotListTemplate)
         elmJotList.innerHTML = jotList
+        const elmCountJots = document.getElementById('count-jots')
+        elmCountJots.innerHTML = jots.length.toString() + ' Jots'
     }
 
     setActiveJot(jotTitle){
@@ -57,5 +59,12 @@ export class JotController {
         jotService.deleteJot()
     }
     
-
+    addJot(){
+        console.log('adding jot')
+        if (!event){return}
+        event.preventDefault()
+        const form = event.target
+        const formData = getFormData(form)
+        jotService.addJot(formData)
+    }
   }

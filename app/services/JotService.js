@@ -25,6 +25,7 @@ class JotService {
     }
     
     saveJot(){
+        console.log('saving jot list')
         const jots = AppState.jots
         saveState('jots', jots)
     }
@@ -41,8 +42,18 @@ class JotService {
         const indexToRemove = AppState.jots.indexOf(activeJot)
         AppState.activeJot = null
         AppState.jots.splice(indexToRemove,1)
-        this.saveJot
+        this.saveJot()
     }
+
+    addJot(formData){
+        const newJot = new Jot(formData)
+        newJot.createdAt = new Date()
+        console.log('service adding jot', newJot)
+        AppState.jots.push(newJot)
+        console.log("jotCount", AppState.jots.length)
+        this.saveJot()
+    }
+    
 }
 
 export const jotService = new JotService()
