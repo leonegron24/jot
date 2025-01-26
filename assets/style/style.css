@@ -10,4 +10,16 @@ textarea {
     display: flex;
     flex-direction: column;
  }
-  
+
+
+ @media screen and (max-width: 768px){
+   .title {
+      font-size: 80%
+   }
+ }
+
+ @media screen and (max-width:425px){
+   .typewriter {
+      display: none;
+   }
+ }

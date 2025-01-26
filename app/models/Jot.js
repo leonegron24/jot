@@ -38,7 +38,9 @@ export class Jot {
     get ActiveJotTemplate() {
         return /*html*/ `
         <div class="bg-secondary p-4 rounded">
-            <h3 class='d-flex justify-content-between'>${this.title} <i class="mdi mdi-note" style = "color: ${this.color}"></i></h3>
+            <h3 class='p-4 text-center'>${this.title} 
+            <i class="mdi mdi-note" style = "color: ${this.color}"></i>
+            </h3>
             <p>Created on: ${this.createdAtFormat}</p>
             <div class="d-flex justify-content-between">
                 <p>Last update: ${this.updatedAtFormat}</p>

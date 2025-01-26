@@ -43,7 +43,7 @@
 
     <!-- Left Menu -->
     <div class="row justify-content-around">
-      <section class="col-md-4 bg-primary p-4 rounded">
+      <section class="col-md-4 bg-primary p-4 rounded order-md-1 order-2">
         <p class="text-end" id="count-jots">0 Jots</p>
         <h4 class="text-center">Add a Jot</h4>
         <!-- Form Start -->
@@ -59,7 +59,7 @@
             </select>
           </p>
           <label for="jot-title">
-            <input required class="p-2 mt-2 rounded" type="text" id="jot-title" name="title" placeholder="Enter Title Here" minlength="3" maxlength="15">
+            <input required class="p-2 mt-2 rounded title" type="text" id="jot-title" name="title" placeholder="Enter Title Here" minlength="3" maxlength="15">
           </label>
           <button class="mt-2 rounded btn btn-warning w-50">Create <i class="mdi mdi-plus"></i></button>
         </form>
@@ -73,7 +73,7 @@
       </section>
 
       <!-- Active Jot Id Here -->
-      <section class="col-md-7 p-4 bg-primary rounded" id="active-jot">
+      <section class="col-md-7 p-4 my-2 bg-primary rounded order-md-2 order-1" id="active-jot">
         <!-- Filler for when there is no Active Jot -->
         <div>
           <h3 class="fw-bold p-4">Create or select a Jot to start Jotting!</h3>
