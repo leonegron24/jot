@@ -24,10 +24,10 @@ export class JotController {
         elmCountJots.innerHTML = jots.length.toString() + ' Jots'
     }
 
-    setActiveJot(jotTitle){
+    setActiveJot(jotID){
         console.log('setting active jot')
         console.log(AppState.activeJot)
-        jotService.setActiveJot(jotTitle)
+        jotService.setActiveJot(jotID)
     }
 
     drawActiveJot(selectedJot){

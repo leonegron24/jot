@@ -18,15 +18,15 @@ export class Jot {
         this.id = data.id || generateId()
         this.title = data.title
         this.color = data.color
-        this.body = data.body
-        this.createdAt = data.createdAt ? new Date(data.createdAt): ''
+        this.body = data.body || ''
+        this.createdAt = data.createdAt ? new Date(data.createdAt): null
         this.updatedAt = data.updatedAt ? new Date(data.updatedAt) : new Date()
     }
 
     get JotListTemplate(){
         return /*html*/ `
         <div class='p-2'>
-            <div type='button' onclick="app.JotController.setActiveJot('${this.title}')" style="border: 10px solid ${this.color}">
+            <div type='button' onclick="app.JotController.setActiveJot('${this.id}')" style="border: 10px solid ${this.color}">
                 <div class="p-2 d-flex align-items-center justify-content-between">
                     <p class="fw-bold">${this.title}</p> <p class=" w-25 text-end text-secondary" style = 'font-size: 10px'>${this.createdAtFormat}</p>
                 </div>
@@ -58,11 +58,12 @@ export class Jot {
     }
 
     get createdAtFormat(){
-        return this.createdAt ? this.createdAt.toLocaleDateString('en-US',{
+        return this.createdAt ? this.createdAt.toLocaleTimeString('en-US',{
             weekday: 'long',
             day: '2-digit',
             month: 'short',
-            year:'numeric'
+            year:'numeric',
+
         }) 
         : ''
     }

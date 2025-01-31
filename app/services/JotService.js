@@ -4,10 +4,10 @@ import { loadState, saveState } from "../utils/Store.js"
 
 class JotService {
     
-    setActiveJot(jotTitle) {
+    setActiveJot(jotID) {
         console.log('service activating jot')
         const jots = AppState.jots
-        const activateJot = jots.find(jot => jot.title === jotTitle)
+        const activateJot = jots.find(jot => jot.id === jotID)
         if (!activateJot){return}
         AppState.activeJot = activateJot
         console.log('jot activated')
